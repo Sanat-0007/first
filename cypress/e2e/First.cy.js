@@ -1,0 +1,43 @@
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false
+})
+describe('My First Test', () => {
+  it(' Register Screen ', () => {
+      cy.visit('https://demo.automationtesting.in/Register.html')
+cy.get('.col-sm-4').eq(0).type('Sanat')
+cy.get('.col-sm-4').eq(1).type('Kumar')
+cy.get('.form-group').eq(1).type('This is a Test Address')
+cy.get('.col-sm-4').eq(2).type('test@yopmail.com')
+cy.get('input[type="tel"]').type(9876543210)
+//cy.get('.ng-pristine ').eq(6).click()
+cy.get('input[value="Male"').click()
+cy.get('input[value="Cricket"').click()
+cy.get('input[value="Movies"').click()
+cy.get('#Skills').select('Adobe InDesign')
+cy.get('#countries').select('Select Country')
+cy.get('#select2-country-container').click({force:true})
+cy.get('#select2-country-results li').eq(4).click()
+cy.get('#yearbox').select('1998')
+cy.get('[placeholder="Month"]').select('September')
+cy.get('#daybox').select('27')
+cy.get('#firstpassword').type('Sanat@123')
+cy.get('#secondpassword').type('Sanat123')
+cy.get('#submitbtn').click()
+//cy.get('[id="imagesrc"]').attachFile('Testfile.jpg')
+// cy.get("#imagesrc").click().attachFile("Testfile.jpg")
+// cy.get("#msdd").click(focus())
+
+// cy.get('multi-select').click()
+// .invoke('multi-select > div')
+// .invoke('attr', 'style', 'display: block')
+// .should('have.attr', 'style', 'display: block')
+// cy.get('multi-select > div')
+// .invoke('attr', 'display', 'block')
+// .should('have.attr', 'style', 'display: block')
+// cy.get('.ui-front').click()
+//cy.wait(5000)
+//cy.get('.form-group').eq(4).type('0987654321')
+
+
+  })
+})
